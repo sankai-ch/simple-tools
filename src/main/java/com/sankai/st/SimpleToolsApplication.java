@@ -10,12 +10,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.core.env.ConfigurableEnvironment;
 
 @SpringBootApplication
-public class StApplication {
+public class SimpleToolsApplication {
 
-	private static final Logger log = LoggerFactory.getLogger(StApplication.class);
+	private static final Logger log = LoggerFactory.getLogger(SimpleToolsApplication.class);
 
 	public static void main(String[] args) throws UnknownHostException {
-		SpringApplication springApplication = new SpringApplication(StApplication.class);
+		SpringApplication springApplication = new SpringApplication(SimpleToolsApplication.class);
 		ConfigurableEnvironment environment = springApplication.run(args).getEnvironment();
 
 		log.info("\n----------------------------------------------------------\n\t"

@@ -13,7 +13,6 @@ import org.springframework.util.StringUtils;
  *
  * @author sankai
  * @since 2023-06-02 23:06:59
- * Copyright(C) 2023 Hangzhou Differsoft Co., Ltd. All rights reserved.*
  */
 public class FileUtil {
     private FileUtil() {
