@@ -25,7 +25,7 @@ public class FileUtil {
      * @throws IOException
      */
     public static void writeToDisk(String outfile, byte[] content) throws IOException {
-        if(null == content || StringUtils.isEmpty(outfile) || content.length < 1) {
+        if(null == content || !StringUtils.hasLength(outfile) || content.length < 1) {
             return;
         }
 
@@ -64,7 +64,7 @@ public class FileUtil {
      * @throws IOException
      */
     public static void writeToDisk(String outfile, InputStream in) throws IOException {
-        if(null == in || StringUtils.isEmpty(outfile)) {
+        if(null == in || !StringUtils.hasLength(outfile)) {
             return;
         }
 
@@ -87,9 +87,7 @@ public class FileUtil {
         } catch (IOException e) {
             throw e;
         } finally {
-            if(null != in) {
-                in.close();
-            }
+            in.close();
             if(null != fos){
                 try {
                     fos.flush();
