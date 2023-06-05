@@ -1,7 +1,7 @@
 package com.sankai.st.generator.service.impl.mysql;
 
 import com.sankai.st.dto.GenStructFileDto;
-import com.sankai.st.generator.service.impl.CommonDataBaseGenerator;
+import com.sankai.st.generator.service.impl.CommonDataBaseEntityGenerator;
 import org.springframework.stereotype.Service;
 
 /**
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
  * @since 2023-06-05 23:28
  */
 @Service("mysqlDataBaseGenerator")
-public class MysqlDataBaseGeneratorImpl extends CommonDataBaseGenerator {
+public class MysqlDataBaseEntityGeneratorImpl extends CommonDataBaseEntityGenerator {
 
 
     /**
@@ -25,13 +25,5 @@ public class MysqlDataBaseGeneratorImpl extends CommonDataBaseGenerator {
         return null;
     }
 
-    /**
-     * 生成文件
-     *
-     * @param genStructFileDto 待生成表结构文件实体
-     */
-    @Override
-    protected void generateFile(GenStructFileDto genStructFileDto) {
-        super.generateFile(genStructFileDto);
-    }
+
 }
