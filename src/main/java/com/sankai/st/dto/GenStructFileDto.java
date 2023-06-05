@@ -1,5 +1,8 @@
 package com.sankai.st.dto;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * 生成实体文件对应属性dto
  *
@@ -9,24 +12,32 @@ package com.sankai.st.dto;
 public class GenStructFileDto {
 
     /**
+     * 包名,非必须
+     */
+    private String packageName;
+
+    /**
      * 表名
      */
     private String tableName;
 
     /**
-     * 字段名称
+     * 字段列表
      */
-    private String fieldName;
+    private List<GenStructFieldDto> fieldList;
 
     /**
-     * 字段类型
+     * 额外的属性
      */
-    private String fieldType;
+    private Map<String, Object> extra;
 
-    /**
-     * 字段注释
-     */
-    private String fieldComment;
+    public String getPackageName() {
+        return packageName;
+    }
+
+    public void setPackageName(String packageName) {
+        this.packageName = packageName;
+    }
 
     public String getTableName() {
         return tableName;
@@ -36,27 +47,19 @@ public class GenStructFileDto {
         this.tableName = tableName;
     }
 
-    public String getFieldName() {
-        return fieldName;
+    public List<GenStructFieldDto> getFieldList() {
+        return fieldList;
     }
 
-    public void setFieldName(String fieldName) {
-        this.fieldName = fieldName;
+    public void setFieldList(List<GenStructFieldDto> fieldList) {
+        this.fieldList = fieldList;
     }
 
-    public String getFieldType() {
-        return fieldType;
+    public Map<String, Object> getExtra() {
+        return extra;
     }
 
-    public void setFieldType(String fieldType) {
-        this.fieldType = fieldType;
-    }
-
-    public String getFieldComment() {
-        return fieldComment;
-    }
-
-    public void setFieldComment(String fieldComment) {
-        this.fieldComment = fieldComment;
+    public void setExtra(Map<String, Object> extra) {
+        this.extra = extra;
     }
 }
