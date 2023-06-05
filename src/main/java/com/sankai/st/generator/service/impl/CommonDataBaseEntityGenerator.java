@@ -1,7 +1,9 @@
 package com.sankai.st.generator.service.impl;
 
 import com.sankai.st.dto.GenStructFileDto;
-import com.sankai.st.generator.service.DataBaseGenerator;
+import com.sankai.st.generator.service.DataBaseEntityGenerator;
+import com.sankai.st.generator.service.DataBaseFileGenerator;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * 通用数据库生成器
@@ -9,7 +11,15 @@ import com.sankai.st.generator.service.DataBaseGenerator;
  * @author liuyangyang
  * @since 2023-06-05 23:29
  */
-public abstract class CommonDataBaseGenerator implements DataBaseGenerator {
+public abstract class CommonDataBaseEntityGenerator implements DataBaseEntityGenerator {
+
+    private DataBaseFileGenerator dataBaseFileGenerator;
+
+    @Autowired
+    public void setDataBaseFileGenerator(DataBaseFileGenerator dataBaseFileGenerator) {
+        this.dataBaseFileGenerator = dataBaseFileGenerator;
+    }
+
     /**
      * 解析json
      *
@@ -35,6 +45,6 @@ public abstract class CommonDataBaseGenerator implements DataBaseGenerator {
      * @param genStructFileDto 待生成表结构文件实体
      */
     protected void generateFile(GenStructFileDto genStructFileDto) {
-        //todo 生成文件
+        dataBaseFileGenerator.generateFile(genStructFileDto);
     }
 }
