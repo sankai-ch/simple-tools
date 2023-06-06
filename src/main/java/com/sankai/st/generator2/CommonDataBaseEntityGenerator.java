@@ -6,7 +6,7 @@ import com.sankai.st.dto.GenStructFileDto;
  * @author liuyangyang
  * @since 2023-06-06 22:21
  */
-public class CommonDataBaseEntityGenerator implements DataBaseEntityGenerator {
+public class CommonDataBaseEntityGenerator extends AbstractDataBaseEntityGenerator {
 
     private SqlJsonParser sqlJsonParser;
 
@@ -20,6 +20,7 @@ public class CommonDataBaseEntityGenerator implements DataBaseEntityGenerator {
     protected void generateFile(GenStructFileDto genStructFileDto) {
         fileGenerator.generateFile(genStructFileDto);
     }
+
     /**
      * @param json
      */
