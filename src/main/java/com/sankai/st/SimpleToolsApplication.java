@@ -27,6 +27,7 @@ public class SimpleToolsApplication {
 				InetAddress.getLocalHost().getHostAddress(),
 				environment.getProperty("server.port"));
 
+
 	}
 
 }
