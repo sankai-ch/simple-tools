@@ -1,6 +1,9 @@
 package com.sankai.st.factory.parse.impl;
 
 
+import org.springframework.stereotype.Service;
+
+import com.sankai.st.dto.GenStructFileDto;
 import com.sankai.st.factory.parse.Parser;
 
 /**
@@ -9,9 +12,12 @@ import com.sankai.st.factory.parse.Parser;
  * @author sankai
  * @since 2023-06-06 23:06:18
  */
+@Service
 public class MysqlParseImpl implements Parser {
     @Override
-    public Object parse(String jsonStr) {
-        return "mysql 解析内容";
+    public GenStructFileDto parse(String jsonStr) {
+        GenStructFileDto genStructFileDto = new GenStructFileDto();
+        genStructFileDto.setTableName("mysql 解析内容");
+        return genStructFileDto;
     }
 }
